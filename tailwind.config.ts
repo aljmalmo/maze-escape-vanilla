@@ -52,6 +52,16 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				// Game-specific colors
+				maze: {
+					wall: 'hsl(var(--maze-wall))',
+					path: 'hsl(var(--maze-path))',
+					player: 'hsl(var(--player))',
+					playerGlow: 'hsl(var(--player-glow))',
+					start: 'hsl(var(--start-point))',
+					end: 'hsl(var(--end-point))',
+					powerup: 'hsl(var(--powerup))'
+				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
@@ -84,11 +94,61 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'glow-pulse': {
+					'0%, 100%': {
+						boxShadow: '0 0 10px hsl(var(--primary) / 0.5)'
+					},
+					'50%': {
+						boxShadow: '0 0 20px hsl(var(--primary) / 0.8)'
+					}
+				},
+				'player-bounce': {
+					'0%, 20%, 50%, 80%, 100%': {
+						transform: 'translateY(0)'
+					},
+					'40%': {
+						transform: 'translateY(-3px)'
+					},
+					'60%': {
+						transform: 'translateY(-2px)'
+					}
+				},
+				'victory-celebration': {
+					'0%': {
+						transform: 'scale(1) rotate(0deg)'
+					},
+					'25%': {
+						transform: 'scale(1.1) rotate(5deg)'
+					},
+					'50%': {
+						transform: 'scale(1.2) rotate(-5deg)'
+					},
+					'75%': {
+						transform: 'scale(1.1) rotate(5deg)'
+					},
+					'100%': {
+						transform: 'scale(1) rotate(0deg)'
+					}
+				},
+				'fade-in': {
+					'0%': {
+						opacity: '0',
+						transform: 'translateY(10px)'
+					},
+					'100%': {
+						opacity: '1',
+						transform: 'translateY(0)'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'glow-pulse': 'glow-pulse 2s ease-in-out infinite',
+				'player-bounce': 'player-bounce 1s ease-in-out infinite',
+				'victory-celebration': 'victory-celebration 0.6s ease-in-out',
+				'fade-in': 'fade-in 0.5s ease-out'
 			}
 		}
 	},
